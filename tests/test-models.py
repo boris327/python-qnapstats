@@ -148,7 +148,7 @@ for model_directory in models:
 
         systemstats = file_get_contents(model_directory, 'systemstats.json')
         if systemstats is not None:
-            assert json.dumps(qnap.get_system_stats(), sort_keys=True) == systemstats
+            assert json.dumps(qnap.get_system_stats(), sort_keys=True) == systemstats.rstrip()
 
         volumes = file_get_contents(model_directory, 'volumes.json')
         if volumes is not None:
